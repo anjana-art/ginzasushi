@@ -1,6 +1,6 @@
 // app/page.tsx
 import Link from "next/link";
-import { Clock, MapPin, Truck, Phone } from "lucide-react";
+import { Clock, MapPin, Truck, Phone, Utensils } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { SITE } from "@/lib/constants";
 import { formatPrice } from "@/lib/utils";
@@ -33,26 +33,25 @@ export default async function HomePage() {
         <div className="container-ginza relative py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-ginza-gold uppercase text-xs tracking-[0.35em] mb-4 font-medium">
-              銀座 · Authentic Japanese
+              銀座 · New Spot in Lisbon
             </p>
             <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight mb-6 text-ginza-black">
-              Fresh Sushi,
+              Fresh &amp; Quality
               <br />
-              <span className="text-ginza-gold">Made to Order.</span>
+              <span className="text-ginza-gold">Sushi.</span>
             </h1>
             <div className="w-20 h-[2px] bg-ginza-gold mb-6" />
             <p className="text-lg text-ginza-grey mb-8 max-w-lg leading-relaxed">
-              Handcrafted nigiri, maki, and ramen prepared by our chefs. Ready
-              for pickup or delivered to your door in {SITE.avgPrepTime} minutes.
+             {SITE.description}
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/menu" className="btn-primary">
-                View Menu
-              </Link>
-              <a href={`tel:${SITE.phone}`} className="btn-secondary">
+              <a href={`tel:${SITE.phone}`} className="btn-primary">
                 <Phone size={16} />
                 Call to Order
               </a>
+              <Link href="/menu" className="btn-secondary">
+                View Menu
+              </Link>
             </div>
           </div>
           <div className="hidden md:block relative aspect-square">
@@ -72,39 +71,58 @@ export default async function HomePage() {
 
       {/* ==================== QUICK INFO ==================== */}
       <section className="bg-ginza-cream border-b border-ginza-gold/20">
-        <div className="container-ginza py-8 grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
+        <div className="container-ginza py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 border-2 border-ginza-gold flex items-center justify-center text-ginza-gold">
-              <Clock size={22} />
+            <div className="w-12 h-12 border-2 border-ginza-gold flex items-center justify-center text-ginza-gold shrink-0">
+              <Utensils size={22} />
             </div>
             <div>
-              <p className="font-semibold text-ginza-black">
-                Ready in {SITE.avgPrepTime} min
-              </p>
-              <p className="text-ginza-grey">Fast preparation</p>
+              <p className="font-semibold text-ginza-black">Dine In</p>
+              <p className="text-ginza-grey">8–10 indoors · 8–10 outdoors</p>
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 border-2 border-ginza-gold flex items-center justify-center text-ginza-gold">
+            <div className="w-12 h-12 border-2 border-ginza-gold flex items-center justify-center text-ginza-gold shrink-0">
+              <Phone size={22} />
+            </div>
+            <div>
+              <p className="font-semibold text-ginza-black">Takeaway &amp; Pickup</p>
+              <p className="text-ginza-grey">Order by phone call</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 border-2 border-ginza-gold flex items-center justify-center text-ginza-gold shrink-0">
               <Truck size={22} />
             </div>
             <div>
-              <p className="font-semibold text-ginza-black">
-                     Free within {SITE.deliveryRadius}              </p>
-              <p className="text-ginza-grey">Min order {formatPrice(SITE.minOrder)}</p>
+              <p className="font-semibold text-ginza-black">Online Delivery</p>
+              <p className="text-ginza-grey">Uber Eats · Glovo · Bolt</p>
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 border-2 border-ginza-gold flex items-center justify-center text-ginza-gold">
+            <div className="w-12 h-12 border-2 border-ginza-gold flex items-center justify-center text-ginza-gold shrink-0">
               <MapPin size={22} />
             </div>
             <div>
-              <p className="font-semibold text-ginza-black">
-                {SITE.address.city} {SITE.address.postcode}
-              </p>
-              <p className="text-ginza-grey">Pickup available</p>
+              <p className="font-semibold text-ginza-black">Pickup Point</p>
+              <p className="text-ginza-grey">Rua Luciano Cordeiro 23B, 1150-212 Lisbon</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ==================== DELIVERY NOTICE ==================== */}
+      <section className="container-ginza pt-12">
+        <div className="bg-ginza-cream border border-ginza-gold/40 p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-4">
+          <div className="flex items-center gap-3">
+            <Clock size={24} className="text-ginza-gold shrink-0" />
+            <p className="font-semibold text-ginza-black">
+              Own delivery within 1.5 km — launching soon
+            </p>
+          </div>
+          <p className="text-sm text-ginza-grey md:ml-auto">
+            Not available yet. In the meantime, order through Uber Eats, Glovo, or Bolt.
+          </p>
         </div>
       </section>
 
@@ -216,23 +234,23 @@ export default async function HomePage() {
             Hungry? <span className="text-ginza-gold">Order now.</span>
           </h2>
           <p className="text-white/70 mb-8 max-w-xl mx-auto">
-            Ready in {SITE.avgPrepTime} minutes. Delivered fresh to your door or
-            ready for pickup.
+            Call to order for takeaway and pickup at Rua Luciano Cordeiro 23B,
+            1150-212 Lisbon. Or find us on Uber Eats, Glovo, and Bolt.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/menu"
-              className="inline-flex items-center justify-center bg-ginza-gold text-ginza-black border-2 border-ginza-gold hover:bg-transparent hover:text-ginza-gold transition-all py-3 px-8 font-semibold tracking-wide"
-            >
-              Order Online
-            </Link>
             <a
               href={`tel:${SITE.phone}`}
-              className="inline-flex items-center gap-2 justify-center border-2 border-white text-white hover:border-ginza-gold hover:text-ginza-gold transition-all py-3 px-8 font-semibold tracking-wide"
+              className="inline-flex items-center gap-2 justify-center bg-ginza-gold text-ginza-black border-2 border-ginza-gold hover:bg-transparent hover:text-ginza-gold transition-all py-3 px-8 font-semibold tracking-wide"
             >
               <Phone size={16} />
               {SITE.phoneDisplay}
             </a>
+            <Link
+              href="/menu"
+              className="inline-flex items-center justify-center border-2 border-white text-white hover:border-ginza-gold hover:text-ginza-gold transition-all py-3 px-8 font-semibold tracking-wide"
+            >
+              View Menu
+            </Link>
           </div>
         </div>
       </section>

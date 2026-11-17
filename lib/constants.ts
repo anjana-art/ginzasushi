@@ -1,20 +1,20 @@
 // lib/constants.ts
 
 export const SITE = {
-  name: "Ginza",
-  tagline: "Japanese Sushi Takeaway",
+  name: "",
+  tagline: "",
   description:
-    "Fresh, authentic Japanese sushi and ramen for takeaway and delivery. Order online for pickup or delivery in under 30 minutes.",
+    " A new sushi spot in Lisbon. Dine in with us — we seat 8–10 guests indoors and 8–10 on our outdoor terrace. Takeaway and pickup available, order by phone. Delivery via Uber Eats, Glovo, and Bolt.",
 
-  phone: "+441234567890",
-  phoneDisplay: "01234 567 890",
-  email: "hello@ginza.co.uk",
+  phone: "920551914",
+  phoneDisplay: "920321797",
+  email: "ginzasushibarlisbon@gmail.com",
   address: {
-    line1: "123 Sushi Lane",
+    line1: "Rua luciano cordeiro 23 b",
     line2: "",
-    city: "London",
-    postcode: "E1 6AN",
-    country: "United Kingdom",
+    city: "Lisbon",
+    postcode: "1150-212",
+    country: "portugal",
   },
 
   hours: {
@@ -28,7 +28,7 @@ export const SITE = {
   },
 
   social: {
-    instagram: "https://instagram.com/ginza",
+    instagram: "https://instagram.com/ginzasushi2026",
     facebook: "https://facebook.com/ginza",
     tiktok: "https://tiktok.com/@ginza",
   },
