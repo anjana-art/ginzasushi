@@ -61,115 +61,106 @@ async function main() {
   const items = [
     // ---------- HOSO MAKI ----------
     {
-      name: "Hosomaki Avocado", slug: "hosomaki-avocado", categorySlug: "hoso-maki",
+      name: "Hosomaki Avocado - 8un.", slug: "hosomaki-avocado", categorySlug: "hoso-maki",
       description: "Avocado, seasoned rice",
       price: 6.50, images: ["/Menu/hosomaki/hosomaki-abacado.jpg"],
       allergens: ["shellfish", "sesame"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 8, serves: 1, isFeatured: true,
     },
     {
-      name: "Hosomaki Ebi", slug: "hosomaki-ebi", categorySlug: "hoso-maki",
+      name: "Hosomaki Ebi - 8un.", slug: "hosomaki-ebi", categorySlug: "hoso-maki",
       description: "Ebi, seasoned rice",
       price: 7.50, images: ["/Menu/hosomaki/hosomaki-ebi.jpg"],
       isContainsRawFish: true, allergens: ["fish", "egg"], spiceLevel: SpiceLevel.MEDIUM,
-      prepTime: 8, serves: 1,
     },
     {
-      name: "Hosomaki Mango", slug: "hosomaki-mango", categorySlug: "hoso-maki",
+      name: "Hosomaki Mango - 8un.", slug: "hosomaki-mango", categorySlug: "hoso-maki",
       description: "Sweet mango rolled in nori and rice",
       price: 5.00, images: ["/Menu/hosomaki/hosomaki-mango.jpg"],
       isVegetarian: true, isVegan: true, isGlutenFree: true,
       allergens: [], spiceLevel: SpiceLevel.NONE,
-      prepTime: 6, serves: 1,
     },
     {
-      name: "Hosomaki Pepino", slug: "hosomaki-pepino", categorySlug: "hoso-maki",
+      name: "Hosomaki Pepino - 8un.", slug: "hosomaki-pepino", categorySlug: "hoso-maki",
       description: "Cucumber rolled in nori and rice",
       price: 5.00, images: ["/Menu/hosomaki/hosomaki-pipino.jpg"],
       isVegetarian: true, isVegan: true, isGlutenFree: true,
       allergens: [], spiceLevel: SpiceLevel.NONE,
-      prepTime: 6, serves: 1,
     },
     {
-      name: "Hosomaki Salmon", slug: "hosomaki-salmon", categorySlug: "hoso-maki",
+      name: "Hosomaki Salmon - 8un.", slug: "hosomaki-salmon", categorySlug: "hoso-maki",
       description: "Premium fresh salmon rolled in nori and rice",
       price: 5.00, images: ["/Menu/hosomaki/hosomaki-salmon.jpg"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 6, serves: 1,
     },
     {
-      name: "Hosomaki Tuna", slug: "hosomaki-tuna", categorySlug: "hoso-maki",
+      name: "Hosomaki Tuna - 8un.", slug: "hosomaki-tuna", categorySlug: "hoso-maki",
       description: "Premium fresh tuna rolled in nori and rice",
       price: 5.00, images: ["/Menu/hosomaki/hosomaki-tuna.jpg"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 6, serves: 1,
     },
 
     // ---------- URAMAKI ----------
     {
-      name: "California Salmon with Salmon topping", slug: "california-salmon-with-salmon", categorySlug: "uramaki",
-      description: "Salmon California roll topped with assorted sashimi",
-      price: 12.50, images: ["/Menu/uramaki/california-salmon-topping-salmon.jpg"],
+      name: "California de Salmão com Cobertura de Salmão / Salmon California Roll with Salmon Topping - 8un.", slug: "california-salmon-with-salmon", categorySlug: "uramaki",
+      description: "Rolo de arroz com salmão, abacate, pepino e queijo Philadelphia, coberto com fatias de salmão. / Inside-out sushi roll filled with salmon, avocado, cucumber, and Philadelphia cream cheese, topped with salmon slices.",
+      price: 7.50, images: ["/Menu/uramaki/uramaki_salmon_cobertura_salmon.jpeg"],
       allergens: ["shellfish", "fish", "soy"], spiceLevel: SpiceLevel.MILD,
-      prepTime: 12, serves: 2, isFeatured: true,
     },
     {
-      name: "California salmon with braised salmon topping", slug: "uramaki-salmon-braised-salmon-topping", categorySlug: "uramaki",
-      description: "California roll topped with braised salmon",
-      price: 14.00, images: ["/Menu/uramaki/california-braised-salmon-topping.jpg"],
+      name: "California de Salmão com Cobertura de Salmão Braseado / Salmon California Roll with Seared Salmon Topping - 8un.", slug: "uramaki-salmon-braised-salmon-topping", categorySlug: "uramaki",
+      description: "Rolo de arroz com salmão, abacate, pepino e queijo Philadelphia, coberto com fatias de salmão braseado. / Inside-out sushi roll filled with salmon, avocado, cucumber, and Philadelphia cream cheese, topped with seared salmon slices.",
+      price: 7.80, images: ["/Menu/uramaki/uramaki_salmon_cobertura_salmon_braseado.jpeg"],
       isContainsRawFish: true, allergens: ["fish", "shellfish", "sesame"],
-      spiceLevel: SpiceLevel.NONE, prepTime: 14, serves: 2,
     },
     {
-      name: "California Salmon", slug: "california-salmon", categorySlug: "uramaki",
-      description: "California roll with salmon",
-      price: 14.00, images: ["/Menu/uramaki/california-salmon.jpg"],
+      name: "California de Salmão / Salmon California Roll - 8un.", slug: "california-salmon", categorySlug: "uramaki",
+      description: "Rolo de arroz com salmão, abacate, pepino e queijo Philadelphia. / Inside-out sushi roll filled with salmon, avocado, cucumber, and Philadelphia cream cheese.",
+      price: 7.00, images: ["/Menu/uramaki/california_salmon.jpeg"],
       isContainsRawFish: true, allergens: ["fish", "shellfish", "sesame"],
-      spiceLevel: SpiceLevel.NONE, prepTime: 14, serves: 2,
     },
     {
-      name: "Uramaki Ebitemi", slug: "uramaki-ebitemi", categorySlug: "uramaki",
-      description: "California roll topped with assorted sashimi",
-      price: 14.00, images: ["/Menu/uramaki/uramaki-ebitemi.jpg"],
+      name: "California de Camarão Tempura / Shrimp Tempura California Roll - 8un.", slug: "uramaki-ebitemi", categorySlug: "uramaki",
+      description: "Rolo de arroz com camarão tempura crocante, abacate e queijo Philadelphia. / Inside-out sushi roll filled with crispy shrimp tempura, avocado, and Philadelphia cream cheese.",
+      price: 6.50, images: ["/Menu/uramaki/uramaki_ebi.jpeg"],
       isContainsRawFish: true, allergens: ["fish", "shellfish", "sesame"],
-      spiceLevel: SpiceLevel.NONE, prepTime: 14, serves: 2,
     },
     {
-      name: "California Salmon Manga", slug: "uramaki-salmon-manga", categorySlug: "uramaki",
-      description: "California roll with salmon and mango",
-      price: 14.00, images: ["/Menu/uramaki/california-salmon-manga.jpg"],
+      name: "Uramaki de Camarão/Shrimp Uramaki - 8un.", slug: "uramaki-camarao", categorySlug: "uramaki",
+      description: "Rolo de arroz com camarão cozido, abacate, pepino e queijo Philadelphia./ Inside-out sushi roll filled with cooked shrimp, avocado, cucumber, and Philadelphia cream cheese.",
+      price: 6.50, images: ["/Menu/uramaki/uramaki_camarao.jpeg"],
       isContainsRawFish: true, allergens: ["fish", "shellfish", "sesame"],
-      spiceLevel: SpiceLevel.NONE, prepTime: 14, serves: 2,
     },
     {
-      name: "California Atun", slug: "uramaki-atun", categorySlug: "uramaki",
-      description: "California roll with tuna ,abacate and cucumber",
-      price: 14.00, images: ["/Menu/uramaki/example.jpg"],
+      name: "California de Salmão e Manga / Salmon & Mango California Roll - 8un.", slug: "uramaki-salmon-manga", categorySlug: "uramaki",
+      description: "Rolo de arroz com salmão, manga e queijo Philadelphia. / Inside-out sushi roll filled with salmon, mango, and Philadelphia cream cheese",
+      price: 7.00, images: ["/Menu/uramaki/salmon_manga_uramaki.jpeg"],
       isContainsRawFish: true, allergens: ["fish", "shellfish", "sesame"],
-      spiceLevel: SpiceLevel.NONE, prepTime: 14, serves: 2,
     },
     {
-      name: "California Delicia do mar ", slug: "uramaki-delicia", categorySlug: "uramaki",
-      description: "California roll with crab stick , abacate, pipino",
-      price: 14.00, images: ["/Menu/uramaki/california-delicia-do-mar.jpg"],
+      name: "California de Atum / Tuna California Roll - 8un.", slug: "uramaki-atun", categorySlug: "uramaki",
+      description: "Rolo de arroz com atum, abacate e pepino / Inside-out sushi roll filled with tuna, avocado, and cucumber",
+      price: 8.50, images: ["/Menu/uramaki/uramaki_atun_pipino_abacate.jpeg"],
       isContainsRawFish: true, allergens: ["fish", "shellfish", "sesame"],
-      spiceLevel: SpiceLevel.NONE, prepTime: 14, serves: 2,
     },
     {
-      name: "Uramari Chicken Crunchy roll", slug: "uramaki-chicken", categorySlug: "uramaki",
-      description: "California roll topped with assorted sashimi",
-      price: 14.00, images: ["/Menu/uramaki/example.jpg"],
+      name: "California de Delícias do Mar / Surimi California Roll - 8un.", slug: "uramaki-delicia", categorySlug: "uramaki",
+      description: "Rolo de arroz com delícias do mar. / Inside-out sushi roll filled with crab sticks.",
+      price: 6.50, images: ["/Menu/uramaki/uramaki_delicia_domar.jpeg"],
       isContainsRawFish: true, allergens: ["fish", "shellfish", "sesame"],
-      spiceLevel: SpiceLevel.NONE, prepTime: 14, serves: 2,
+    },
+    {
+      name: "Uramaki de Frango Crocante / Crunchy Chicken Roll - 8un.", slug: "uramaki-chicken", categorySlug: "uramaki",
+      description: "Rolo de arroz com frango panado e queijo Philadelphia. / Inside-out sushi roll filled with crispy breaded chicken and Philadelphia cream cheese.",
+      price: 6.00, images: ["/Menu/uramaki/crispy_chicken.png"],
+      isContainsRawFish: true, allergens: ["fish", "shellfish", "sesame"],
     },
 
     // ---------- FUTO MAKI (Example) ----------
     {
-      name: "Futo Maki", slug: "futo-maki", categorySlug: "futo-maki",
+      name: "Futo Maki - 5un.", slug: "futo-maki", categorySlug: "futo-maki",
       description: "Thick roll with assorted fillings",
       price: 10.00, images: ["/Menu/futo-maki/Futomaki.jpg"],
       allergens: ["fish", "soy"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 10, serves: 1,
     },
 
     // ---------- TEMAKI (Example) ----------
@@ -178,59 +169,52 @@ async function main() {
       description: "Hand-rolled cone with salmon",
       price: 6.00, images: ["/Menu/temaki/Temaki-salmon.jpg"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 5, serves: 1,
     },
     {
       name: " Temaki Salmon philadelphia", slug: "salmon-temaki-philadelphia", categorySlug: "temaki",
       description: "Hand-rolled cone with salmon and philadelphia",
       price: 6.00, images: ["/Menu/temaki/Temaki-salmon-philadelphia.jpg"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 5, serves: 1,
     },
     {
       name: " Temaki Atun", slug: "temaki-atun", categorySlug: "temaki",
       description: "Hand-rolled cone with atun",
       price: 6.00, images: ["/Menu/temaki/Temaki-atum.jpg"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 5, serves: 1,
     },
     {
       name: " Temaki ebi", slug: "temaki-ebi", categorySlug: "temaki",
       description: "Hand-rolled cone with ebi",
       price: 6.00, images: ["/Menu/temaki/Temaki-Ebi.jpg"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 5, serves: 1,
     },
     {
       name: " Temaki Camarao ", slug: "camarao-temaki", categorySlug: "temaki",
       description: "Hand-rolled cone with cooked prawns",
       price: 6.00, images: ["/Menu/temaki/Temaki-camarao.jpg"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 5, serves: 1,
     },
     {
       name: " Temaki Vegeterian", slug: "vegeterian-temaki", categorySlug: "temaki",
       description: "Hand-rolled cone with salmon",
       price: 6.00, images: ["/Menu/temaki/Temaki-vegeterian.jpg"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 5, serves: 1,
     },
 
     // ---------- NIGIRI ----------
     {
       name: "Salmon Nigiri", slug: "salmon-nigiri", categorySlug: "nigiri",
       description: "Fresh Scottish salmon over seasoned rice",
-      price: 4.50, images: ["/Menu/nigiri/nigiri-salmon.jpg"],
+      price: 4.50, images: ["/Menu/nigiri/nigiri-salmon.png"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 5, serves: 1, isFeatured: true,
     },
     {
       name: "Tuna Nigiri", slug: "tuna-nigiri", categorySlug: "nigiri",
       description: "Premium bluefin tuna over seasoned rice",
-      price: 5.50, images: ["/Menu/nigiri/nigiri-tuna.jpg"],
+      price: 5.50, images: ["/Menu/nigiri/nigiri-tuna.png"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 5, serves: 1,
     },
+    /*
     {
       name: "Nigiri Branco", slug: "nigiri-branco", categorySlug: "nigiri",
       description: "Premium white fish over seasoned rice",
@@ -238,6 +222,7 @@ async function main() {
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
       prepTime: 5, serves: 1,
     },
+     /*
     {
       name: "Octopus Nigiri", slug: "octopus-nigiri", categorySlug: "nigiri",
       description: "Premium octopus over seasoned rice",
@@ -251,11 +236,11 @@ async function main() {
       price: 5.50, images: ["/Menu/nigiri/nigiri-enoki.jpg"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
       prepTime: 5, serves: 1,
-    },
+    }, */
     {
       name: "Braised Salmon Nigiri", slug: "braised salmon", categorySlug: "nigiri",
       description: "Premium braised salmon  over seasoned rice",
-      price: 5.50, images: ["/Menu/nigiri/nigiri-salmon-braseado.jpg"],
+      price: 5.50, images: ["/Menu/nigiri/nigiri-salmon-braseado.png"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
       prepTime: 5, serves: 1,
     },
@@ -266,18 +251,18 @@ async function main() {
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
       prepTime: 5, serves: 1,
     },
-    {
+    /* {
       name: "Tamago Nigiri", slug: "tamago-nigiri", categorySlug: "nigiri",
       description: "Premium tamago over seasoned rice",
       price: 5.50, images: ["/Menu/nigiri/nigiri-tamago.jpg"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
       prepTime: 5, serves: 1,
     },
-    
+     */
     {
       name: "Nigiri Abacate", slug: "abacate-nigiri", categorySlug: "nigiri",
       description: "Sweet tiger abacate over rice",
-      price: 5.00, images: ["/Menu/nigiri/nigiri-abacado.jpg"],
+      price: 5.00, images: ["/Menu/nigiri/nigiri-abacado.png"],
       allergens: ["shellfish"], spiceLevel: SpiceLevel.NONE,
       prepTime: 5, serves: 1,
     },
@@ -352,6 +337,7 @@ async function main() {
 
 
     // ---------- SASHIMI ----------
+     /*
     {
       name: "Sashimi Branco", slug: "branco-sashimi", categorySlug: "sashimi",
       description: "Slices of premium fresh white fish",
@@ -365,7 +351,7 @@ async function main() {
       price: 9.00, images: ["/Menu/sashimi/sashimi-octopus.jpg"],
       isContainsRawFish: true, isGlutenFree: true, allergens: ["fish"],
       spiceLevel: SpiceLevel.NONE, prepTime: 6, serves: 1,
-    },
+    }, */
     {
       name: "Sashimi Salmon", slug: "salmon-sashimi", categorySlug: "sashimi",
       description: "Slices of premium fresh Salmon",
@@ -399,7 +385,7 @@ async function main() {
     },
 
     // ---------- SPECIAL ROLLS ----------
-    {
+   /*  {
       name: "Luxury Uramaki", slug: "luxury-uramaki", categorySlug: "special-rolls",
       description: "Prawn tempura, avocado, eel sauce, tobiko",
       price: 12.50, images: ["/Menu/special roll/luxury-uramaki-roll.jpg"],
@@ -427,7 +413,7 @@ async function main() {
       isContainsRawFish: true, allergens: ["fish", "shellfish", "sesame"],
       spiceLevel: SpiceLevel.NONE, prepTime: 14, serves: 2,
     },
-
+ */
     // ---------- COMBINADO (Example) ----------
     {
       name: "Gintokyo ", slug: "gintokyo", categorySlug: "combinado",
@@ -464,74 +450,75 @@ async function main() {
       description: "Tofu tempura with special sauce",
       price: 7.00, images: ["/Menu/hot-starters/agedashi.jpg"],
       allergens: ["gluten", "egg", "soy"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 10, serves: 1, isFeatured: true },
-    { name: "Gyoza", slug: "gyoza", categorySlug: "hot-starters",
+       isFeatured: true },
+    { name: "Gyoza Chicken/Veggie", slug: "gyoza", categorySlug: "hot-starters",
       description: "Pan-fried dumplings with ponzu dip",
       price: 6.50, images: ["/Menu/hot-starters/gyoza.jpg"],
       allergens: ["gluten", "soy", "sesame"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 10, serves: 1 },
+      },
     { name: "Ebi Tempura", slug: "ebi-tempura", categorySlug: "hot-starters",
       description: "Lightly battered ebi with tentsuyu",
       price: 6.00, images: ["/Menu/hot-starters/ebi-tempura.jpg"],
       allergens: ["gluten", "soy"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 8, serves: 1 },
+      },
     { name: "Edamame", slug: "edamame", categorySlug: "hot-starters",
       description: "Boiled salted edamame",
       price: 7.50, images: ["/Menu/hot-starters/edamame.jpg"],
       allergens: ["shellfish", "gluten", "egg", "soy"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 10, serves: 1 },
+       },
     { name: "Miso Sopa", slug: "miso-sopa", categorySlug: "hot-starters",
       description: "Miso soup",
       price: 7.50, images: ["/Menu/hot-starters/miso-sopa.jpg"],
       allergens: ["shellfish", "gluten", "egg", "soy"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 10, serves: 1 },
+       },
        { name: "Crepe ", slug: "crepe", categorySlug: "hot-starters",
       description: "crepe vegeterian",
       price: 7.50, images: ["/Menu/hot-starters/crepe.jpg"],
       allergens: ["shellfish", "gluten", "egg", "soy"], spiceLevel: SpiceLevel.NONE,
-      prepTime: 10, serves: 1 },
+       },
 
     // ---------- COLD STARTERS ----------
     { name: "Wakame Salad", slug: "seaweed-salad", categorySlug: "cold-starters",
       description: "Marinated wakame with sesame and ginger",
       price: 5.00, images: ["/Menu/cold-starters/wakame.jpg"],
       isVegetarian: true, isVegan: true, allergens: ["sesame", "soy"],
-      spiceLevel: SpiceLevel.NONE, prepTime: 5, serves: 1 },
-    { name: "Carpaccio Salmon", slug: "carpaccio-salmon", categorySlug: "cold-starters",
+      },
+   /*  { name: "Carpaccio Salmon", slug: "carpaccio-salmon", categorySlug: "cold-starters",
       description: "Salmon carpaccio",
       price: 5.00, images: ["/Menu/cold-starters/carpaccio-salmon.jpg"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE, 
-      prepTime: 5, serves: 1 },
+      prepTime: 5, serves: 1 }, */
     { name: "Ceviche Salmon", slug: "salmon-ceviche", categorySlug: "cold-starters",
       description: "Marinated salmon",
       price: 5.00, images: ["/Menu/cold-starters/ceviche.jpg"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE, 
-      prepTime: 5, serves: 1 },
+      },
     
-    { name: "Oysters", slug: "oysters", categorySlug: "cold-starters",
+    /* { name: "Oysters", slug: "oysters", categorySlug: "cold-starters",
       description: "Fresh oysters",
       price: 5.00, images: ["/Menu/cold-starters/oysters.jpg"],
       allergens: ["shellfish"], spiceLevel: SpiceLevel.NONE, 
-      prepTime: 5, serves: 1 },
+      prepTime: 5, serves: 1 }, 
     { name: "Salmon Crispy Ball", slug: "salmon-crispy-ball", categorySlug: "cold-starters",
       description: "Crispy ball with salmon",
       price: 5.00, images: ["/Menu/cold-starters/salmon-puri.jpg"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE, 
       prepTime: 5, serves: 1 },
+      */
     { name: "Sunomono Salad", slug: "sunomono-salad", categorySlug: "cold-starters",
       description: "Marinated cucumber with sesame and ginger",
       price: 5.00, images: ["/Menu/cold-starters/sunomono.jpg"],
       isVegetarian: true, isVegan: true, allergens: ["sesame", "soy"],
-      spiceLevel: SpiceLevel.NONE, prepTime: 5, serves: 1 },
-    { name: "Tartare Tuna", slug: "tuna-tartare", categorySlug: "cold-starters",
+      },
+   /*  { name: "Tartare Tuna", slug: "tuna-tartare", categorySlug: "cold-starters",
       description: "Marinated with tuna",
       price: 5.00, images: ["/Menu/cold-starters/tartare-de-atun.jpg"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE, 
-      prepTime: 5, serves: 1 },
+      prepTime: 5, serves: 1 }, */
 
     // ---------- RAMEN ----------
    
-    {
+   /*  {
       name: "Miso Ramen", slug: "miso-ramen", categorySlug: "ramen",
       description: "Soybean paste broth, corn, butter, scallions",
       price: 12.00, images: ["/Menu/ramen/example.jpg"],
@@ -545,9 +532,9 @@ async function main() {
       allergens: ["gluten", "soy", "sesame"], spiceLevel: SpiceLevel.HOT,
       prepTime: 15, serves: 1,
     },
-
+ */
     // ---------- POKE BOWL (Example) ----------
-    {
+   /*  {
       name: "Salmon Poke Bowl", slug: "salmon-poke-bowl", categorySlug: "poke-bowl",
       description: "Fresh salmon, avocado, edamame, and rice",
       price: 14.00, images: ["/Menu/poke-bowl/example.jpg"],
@@ -560,10 +547,10 @@ async function main() {
       price: 14.00, images: ["/Menu/poke-bowl/example.jpg"],
       isContainsRawFish: true, allergens: ["fish", "soy", "sesame"], spiceLevel: SpiceLevel.NONE,
       prepTime: 10, serves: 1,
-    },
+    }, */
 
     // ---------- BENTO ----------
-    {
+   /*  {
       name: "Salmon Bento", slug: "salmon-bento", categorySlug: "bento",
       description: "Grilled salmon, rice, miso soup, pickles, edamame",
       price: 16.00, images: ["/Menu/ginza-bento-box/example.jpg"],
@@ -577,7 +564,7 @@ async function main() {
       allergens: ["gluten", "egg", "soy"], spiceLevel: SpiceLevel.NONE,
       prepTime: 18, serves: 1,
     },
-
+ */
     // ---------- EXTRA (Example) ----------
     {
       name: "Extra Ginger", slug: "extra-ginger", categorySlug: "extra",
@@ -588,7 +575,7 @@ async function main() {
     },
 
     // ---------- DRINKS ----------
-    {
+   /*  {
       name: "Green Tea", slug: "green-tea", categorySlug: "drinks",
       description: "Hot Japanese sencha",
       price: 2.50, images: ["https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=800"],
@@ -608,7 +595,7 @@ async function main() {
       price: 4.50, images: ["https://images.unsplash.com/photo-1608270586620-248524c67de9?w=800"],
       allergens: ["gluten"], spiceLevel: SpiceLevel.NONE, serves: 1,
     },
-
+ */
     // ---------- COCKTAILS (Example) ----------
     {
       name: "Ginza Martini", slug: "ginza-martini", categorySlug: "cocktails",
@@ -620,16 +607,16 @@ async function main() {
 
     // ---------- DESSERTS ----------
     {
-      name: "Matcha Mochi (3pc)", slug: "matcha-mochi", categorySlug: "desserts",
-      description: "Soft rice cakes filled with matcha ice cream",
-      price: 5.50, images: ["/Menu/desserts/example.jpg"],
+      name: "Coffee Mochi (3pc)", slug: "matcha-mochi", categorySlug: "desserts",
+      description: "Soft rice cakes filled with coffee ice cream",
+      price: 5.50, images: ["/Menu/desserts/example1.jpg"],
       isVegetarian: true, allergens: ["milk"], spiceLevel: SpiceLevel.NONE,
       serves: 1, isFeatured: true,
     },
     {
-      name: "Matcha Cheesecake", slug: "matcha-cheesecake", categorySlug: "desserts",
+      name: "Coconut & ananas mochi", slug: "matcha-cheesecake", categorySlug: "desserts",
       description: "Creamy baked cheesecake with matcha",
-      price: 6.00, images: ["/Menu/desserts/example.jpg"],
+      price: 6.00, images: ["/Menu/desserts/example1.jpg"],
       isVegetarian: true, allergens: ["milk", "gluten", "egg"],
       spiceLevel: SpiceLevel.NONE, serves: 1,
     },

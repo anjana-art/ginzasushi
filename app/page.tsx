@@ -58,7 +58,7 @@ export default async function HomePage() {
             <div className="absolute inset-0 border-2 border-ginza-gold translate-x-4 translate-y-4" />
             <div className="relative w-full h-full overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800"
+                src="/Menu/combinado/background_ginza.jpeg"
                 alt="Fresh sushi platter"
                 fill
                 className="object-cover"

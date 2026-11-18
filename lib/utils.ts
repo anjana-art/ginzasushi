@@ -16,15 +16,15 @@ export function formatPrice(
       ? parseFloat(amount)
       : amount.toNumber?.() ?? 0;
 
-  return new Intl.NumberFormat("en-GB", {
+  return new Intl.NumberFormat("pt-PT", {
     style: "currency",
-    currency: "GBP",
+    currency: "EUR",
   }).format(value);
 }
 
 export function formatDate(date: Date | string): string {
   const d = typeof date === "string" ? new Date(date) : date;
-  return new Intl.DateTimeFormat("en-GB", {
+  return new Intl.DateTimeFormat("pt-PT", {
     day: "2-digit",
     month: "short",
     year: "numeric",
@@ -33,7 +33,7 @@ export function formatDate(date: Date | string): string {
 
 export function formatTime(date: Date | string): string {
   const d = typeof date === "string" ? new Date(date) : date;
-  return new Intl.DateTimeFormat("en-GB", {
+  return new Intl.DateTimeFormat("pt-PT", {
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,

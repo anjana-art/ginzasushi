@@ -6,8 +6,8 @@ export const SITE = {
   description:
     " A new sushi spot in Lisbon. Dine in with us — we seat 8–10 guests indoors and 8–10 on our outdoor terrace. Takeaway and pickup available, order by phone. Delivery via Uber Eats, Glovo, and Bolt.",
 
-  phone: "920551914",
-  phoneDisplay: "920321797",
+  phone: "211552468",
+  phoneDisplay: "211552468",
   email: "ginzasushibarlisbon@gmail.com",
   address: {
     line1: "Rua luciano cordeiro 23 b",
@@ -18,13 +18,13 @@ export const SITE = {
   },
 
   hours: {
-    monday: "11:30 – 22:00",
-    tuesday: "11:30 – 22:00",
-    wednesday: "11:30 – 22:00",
-    thursday: "11:30 – 22:00",
-    friday: "11:30 – 23:00",
-    saturday: "12:00 – 23:00",
-    sunday: "12:00 – 21:30",
+    monday: "closed",
+    tuesday: "12:00pm – 15:00pm & 18:00pm - 23:00pm",
+    wednesday: "12:00pm – 15:00pm & 18:00pm - 23:00pm",
+    thursday:  "12:00pm – 15:00pm & 18:00pm - 23:00pm",
+    friday: "12:00pm – 15:00pm & 18:00pm - 23:00pm",
+    saturday:  "12:00pm – 15:00pm & 18:00pm - 23:00pm",
+    sunday:  "12:00pm – 15:00pm & 18:00pm - 23:00pm",
   },
 
   social: {
