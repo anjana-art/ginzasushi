@@ -299,7 +299,7 @@ async function main() {
     {
       name: "Gunkan Salmão - 2 peças", slug: "salmon-gunkan", categorySlug: "gunkan",
       description: "Salmão sobre arroz, envolto em nori",
-      price: 2.90, images: ["/Menu/gunkan/gunkan-salmao.jpeg"],
+      price: 2.90, images: ["/Menu/gunkan/gunkan_salmon_ai.png"],
       isContainsRawFish: true, allergens: ["fish"], spiceLevel: SpiceLevel.NONE,
       isFeatured: true,
     },
@@ -531,32 +531,32 @@ async function main() {
       isVegetarian: true, allergens: ["milk"], spiceLevel: SpiceLevel.NONE,
     },
 
-    // ---------- EXTRA ----------
+  /*   // ---------- EXTRA ----------
     {
       name: "Extra Gengibre", slug: "extra-ginger", categorySlug: "extra",
       description: "Porção de gengibre em conserva",
-      price: 1.00, images: ["/Menu/extras/example.jpg"],
+      price: 1.00, images: [""],
       isVegetarian: true, isVegan: true, isGlutenFree: true,
       allergens: [], spiceLevel: SpiceLevel.NONE,
     },
 
     // ---------- COCKTAILS ----------
     {
-      name: "Ginza Martini", slug: "ginza-martini", categorySlug: "cocktails",
-      description: "Martini de saquê da casa",
-      price: 12.00, images: ["/Menu/cocktails/example.jpg"],
+      name: "Martini", slug: "martini", categorySlug: "cocktails",
+      description: "Martini classico",
+      price: 12.00, images: [""],
       isVegetarian: true, isVegan: true, isGlutenFree: true,
       allergens: [], spiceLevel: SpiceLevel.NONE,
     },
 
     // ---------- WINE LIST ----------
     {
-      name: "Vinho Tinto da Casa", slug: "house-red-wine", categorySlug: "wine-list",
+      name: "Copo Vinho Tinto/branco da Casa", slug: "cup-wine", categorySlug: "wine-list",
       description: "Copo de vinho tinto da casa",
-      price: 8.00, images: ["/Menu/wine/example.jpg"],
+      price: 4.00, images: [""],
       isVegetarian: true, isVegan: true, isGlutenFree: true,
       allergens: [], spiceLevel: SpiceLevel.NONE,
-    },
+    }, */
   ];
 
   for (const item of items) {
