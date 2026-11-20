@@ -1,6 +1,6 @@
 // app/page.tsx
 import Link from "next/link";
-import { Clock, MapPin, Truck, Phone, Utensils } from "lucide-react";
+import { Clock, MapPin, Truck, Phone, Utensils, ChevronDown } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { SITE } from "@/lib/constants";
 import { formatPrice } from "@/lib/utils";
@@ -21,10 +21,15 @@ export default async function HomePage() {
     orderBy: { createdAt: "desc" },
   });
 
-  const categories = await prisma.category.findMany({
+  // Fetch categories and filter out Special Rolls and Bento
+  const allCategories = await prisma.category.findMany({
     where: { isActive: true },
     orderBy: { sortOrder: "asc" },
   });
+
+  const categories = allCategories.filter(
+    (cat) => !["special-rolls", "bento"].includes(cat.slug)
+  );
 
   return (
     <div className="bg-white">
@@ -67,6 +72,24 @@ export default async function HomePage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ==================== DISCOUNT BANNER ==================== */}
+      <section className="bg-ginza-gold text-ginza-black py-4">
+        <div className="container-ginza text-center flex flex-col items-center justify-center space-y-1">
+          <p className="font-bold text-sm md:text-base uppercase tracking-wider">
+            10% de desconto em takeaway ou Pickup order
+          </p>
+          <p className="font-semibold text-xs md:text-sm">
+            5% de desconto em refeições no local
+          </p>
+          <p className="font-bold text-xs md:text-sm mt-1">
+            Estudantes: 15% de desconto apenas em refeições no local
+          </p>
+          <p className="text-[10px] md:text-xs mt-2 opacity-80">
+            Oferta de 4 peças de hosomaki hot roll em encomendas superiores a 30 €
+          </p>
         </div>
       </section>
 
@@ -137,15 +160,36 @@ export default async function HomePage() {
           </p>
         </div>
 
-        {/* ── Category pills: smaller on mobile, original on desktop ── */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+        {/* ── Mobile Dropdown (Visible only on small screens) ── */}
+        <div className="md:hidden w-full mb-6">
+          <details className="group border border-ginza-grey-light bg-white">
+            <summary className="flex items-center justify-between p-4 cursor-pointer list-none font-serif text-ginza-black">
+              <span>Select a Category</span>
+              <ChevronDown className="w-5 h-5 text-ginza-gold group-open:rotate-180 transition-transform" />
+            </summary>
+            <div className="flex flex-col border-t border-ginza-grey-light">
+              {categories.map((cat) => (
+                <Link
+                  key={cat.id}
+                  href={`/menu?category=${cat.slug}`}
+                  className="px-4 py-3 border-b border-ginza-grey-light last:border-0 hover:bg-ginza-cream text-ginza-black"
+                >
+                  {cat.name}
+                </Link>
+              ))}
+            </div>
+          </details>
+        </div>
+
+        {/* ── Desktop Category pills (Hidden on mobile) ── */}
+        <div className="hidden md:flex flex-wrap justify-center gap-4">
           {categories.map((cat) => (
             <Link
               key={cat.id}
               href={`/menu?category=${cat.slug}`}
-              className="group px-4 py-2 md:p-6 bg-white border border-ginza-grey-light hover:border-ginza-gold text-center transition-all md:flex-1 md:min-w-[140px]"
+              className="group p-6 bg-white border border-ginza-grey-light hover:border-ginza-gold text-center transition-all flex-1 min-w-[140px]"
             >
-              <p className="text-sm md:text-lg font-serif text-ginza-black group-hover:text-ginza-gold transition-colors whitespace-nowrap md:whitespace-normal">
+              <p className="text-lg font-serif text-ginza-black group-hover:text-ginza-gold transition-colors">
                 {cat.name}
               </p>
             </Link>
@@ -165,20 +209,21 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Grid changed to 2 columns on mobile */}
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
               {featured.map((item) => (
                 <Link
                   key={item.id}
                   href={`/menu/${item.slug}`}
                   className="group bg-white border border-ginza-grey-light hover:border-ginza-gold transition-all overflow-hidden flex flex-col"
                 >
-                  <div className="relative aspect-[4/3] bg-ginza-cream overflow-hidden">
+                  <div className="relative aspect-square md:aspect-[4/3] bg-ginza-cream overflow-hidden">
                     {item.images[0] ? (
                       <Image
                         src={item.images[0]}
                         alt={item.name}
                         fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     ) : (
@@ -187,18 +232,18 @@ export default async function HomePage() {
                       </div>
                     )}
                   </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <p className="text-[10px] uppercase tracking-[0.3em] text-ginza-gold mb-2">
+                  <div className="p-4 md:p-6 flex flex-col flex-1">
+                    <p className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-ginza-gold mb-1 md:mb-2 line-clamp-1">
                       {item.category.name}
                     </p>
-                    <h3 className="font-serif text-xl font-bold mb-2 text-ginza-black group-hover:text-ginza-gold transition-colors">
+                    <h3 className="font-serif text-base md:text-xl font-bold mb-1 md:mb-2 text-ginza-black group-hover:text-ginza-gold transition-colors line-clamp-2">
                       {item.name}
                     </h3>
-                    <p className="text-sm text-ginza-grey line-clamp-2 mb-4 leading-relaxed flex-1">
+                    <p className="text-xs md:text-sm text-ginza-grey line-clamp-2 mb-2 md:mb-4 leading-relaxed flex-1">
                       {item.description}
                     </p>
-                    <div className="flex items-center justify-between pt-3 border-t border-ginza-grey-light">
-                      <p className="font-serif font-bold text-ginza-black text-lg leading-none">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between pt-2 md:pt-3 border-t border-ginza-grey-light gap-2">
+                      <p className="font-serif font-bold text-ginza-black text-sm md:text-lg leading-none">
                         {formatPrice(item.price)}
                       </p>
                       <QuickAddButton
