@@ -22,32 +22,32 @@ async function main() {
   console.log("✅ Admin created:", admin.email);
 
   // ==================== CATEGORIES ====================
-  const categories = [
-    { name: "Hoso Maki",       slug: "hoso-maki",       description: "Thin sushi rolls", sortOrder: 1 },
-    { name: "Uramaki",         slug: "uramaki",         description: "Inside-out rolls with rice on the outside", sortOrder: 2 },
-    { name: "Futo Maki",       slug: "futo-maki",       description: "Thick sushi rolls", sortOrder: 3 },
+   const categories = [
+    { name: "Combinado",       slug: "combinado",       description: "Combination platters", sortOrder: 1 },
+    { name: "Hot Starters",    slug: "hot-starters",    description: "Warm appetisers to begin your meal", sortOrder: 2 },
+    { name: "Cold Starters",   slug: "cold-starters",   description: "Chilled appetisers and small bites", sortOrder: 3 },
     { name: "Temaki",          slug: "temaki",          description: "Hand-rolled cone sushi", sortOrder: 4 },
-    { name: "Nigiri",          slug: "nigiri",          description: "Hand-pressed sushi over rice", sortOrder: 5 },
-    { name: "Gunkan",          slug: "gunkan",          description: "Battleship-style sushi", sortOrder: 6 },
-    { name: "Sashimi",         slug: "sashimi",         description: "Fresh sliced raw fish", sortOrder: 7 },
-    { name: "Hot Rolls",       slug: "hot-rolls",       description: "Fried and warm sushi rolls", sortOrder: 8 },
-    { name: "Combinado",       slug: "combinado",       description: "Combination platters", sortOrder: 9 },
-    { name: "Hot Starters",    slug: "hot-starters",    description: "Warm appetisers to begin your meal", sortOrder: 10 },
-    { name: "Cold Starters",   slug: "cold-starters",   description: "Chilled appetisers and small bites", sortOrder: 11 },
+    { name: "Hoso Maki",       slug: "hoso-maki",       description: "Thin sushi rolls", sortOrder: 5 },
+    { name: "Uramaki",         slug: "uramaki",         description: "Inside-out rolls with rice on the outside", sortOrder: 6 },
+    { name: "Hot Rolls",       slug: "hot-rolls",       description: "Fried and warm sushi rolls", sortOrder: 7 },
+    { name: "Futo Maki",       slug: "futo-maki",       description: "Thick sushi rolls", sortOrder: 8 },
+    { name: "Nigiri",          slug: "nigiri",          description: "Hand-pressed sushi over rice", sortOrder: 9 },
+    { name: "Gunkan",          slug: "gunkan",          description: "Battleship-style sushi", sortOrder: 10 },
+    { name: "Sashimi",         slug: "sashimi",         description: "Fresh sliced raw fish", sortOrder: 11 },
     { name: "Ramen",           slug: "ramen",           description: "Japanese noodle soups", sortOrder: 12 },
-    { name: "Extra",           slug: "extra",           description: "Add-ons and sides", sortOrder: 13 },
-    { name: "Drinks",          slug: "drinks",          description: "Green tea, sake, soft drinks", sortOrder: 14 },
-    { name: "Cocktails",       slug: "cocktails",       description: "Signature mixed drinks", sortOrder: 15 },
-    { name: "Desserts",        slug: "desserts",        description: "Mochi, matcha cheesecake", sortOrder: 16 },
+    { name: "Poké",            slug: "poke-bowl",       description: "Poké bowls", sortOrder: 13 },
+    { name: "Desserts",        slug: "desserts",        description: "Mochi, matcha cheesecake", sortOrder: 14 },
+    { name: "Drinks",          slug: "drinks",          description: "Green tea, sake, soft drinks", sortOrder: 15 },
+    { name: "Cocktails",       slug: "cocktails",       description: "Signature mixed drinks", sortOrder: 16 },
     { name: "Wine List",       slug: "wine-list",       description: "Red, white, and sake selections", sortOrder: 17 },
-    { name: "Poké",            slug: "poke-bowl",       description: "Poké bowls", sortOrder: 18 },
+    { name: "Extra",           slug: "extra",           description: "Add-ons and sides", sortOrder: 18 },
   ];
 
   const catMap: Record<string, string> = {};
   for (const cat of categories) {
     const c = await prisma.category.upsert({
       where: { slug: cat.slug },
-      update: {},
+      update: {sortOrder: cat.sortOrder},
       create: cat,
     });
     catMap[cat.slug] = c.id;
