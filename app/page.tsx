@@ -54,7 +54,8 @@ export default async function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="hidden md:block relative aspect-square">
+          {/* ── Feature image: now visible on all screens ── */}
+          <div className="relative aspect-square w-full max-w-md mx-auto md:max-w-none">
             <div className="absolute inset-0 border-2 border-ginza-gold translate-x-4 translate-y-4" />
             <div className="relative w-full h-full overflow-hidden">
               <Image
@@ -136,14 +137,15 @@ export default async function HomePage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        {/* ── Category pills: smaller on mobile, original on desktop ── */}
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4">
           {categories.map((cat) => (
             <Link
               key={cat.id}
               href={`/menu?category=${cat.slug}`}
-              className="group p-6 bg-white border border-ginza-grey-light hover:border-ginza-gold text-center transition-all"
+              className="group px-4 py-2 md:p-6 bg-white border border-ginza-grey-light hover:border-ginza-gold text-center transition-all md:flex-1 md:min-w-[140px]"
             >
-              <p className="font-serif text-lg text-ginza-black group-hover:text-ginza-gold transition-colors">
+              <p className="text-sm md:text-lg font-serif text-ginza-black group-hover:text-ginza-gold transition-colors whitespace-nowrap md:whitespace-normal">
                 {cat.name}
               </p>
             </Link>
