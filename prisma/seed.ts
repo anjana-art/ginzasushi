@@ -576,8 +576,7 @@ async function main() {
         isGlutenFree: item.isGlutenFree ?? false,
         isContainsRawFish: item.isContainsRawFish ?? false,
         allergens: item.allergens ?? [],
-        prepTime: item.prepTime,
-        serves: item.serves,
+       
         isFeatured: item.isFeatured ?? false,
         stock: 100,
       },
